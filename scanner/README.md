@@ -1,0 +1,1 @@
+# OpenSCAP 扫描，主要是对crontab进程进行重置
