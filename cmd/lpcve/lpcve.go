@@ -1,6 +1,7 @@
 package main
 
 import (
+	_ "ipcve/bootstrap"
 	"net/http"
 
 	"github.com/gin-contrib/pprof"
