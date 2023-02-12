@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"lpcve/app/routers"
 	_ "lpcve/bootstrap"
-	_ "lpcve/scanner"
 )
 
 func main() {
