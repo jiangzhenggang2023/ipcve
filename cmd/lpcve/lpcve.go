@@ -1,25 +1,14 @@
 package main
 
 import (
-	_ "ipcve/bootstrap"
-	"net/http"
-
-	"github.com/gin-contrib/pprof"
-	"github.com/gin-gonic/gin"
+	"fmt"
+	"lpcve/app/routers"
+	_ "lpcve/bootstrap"
+	_ "lpcve/scanner"
 )
 
 func main() {
-	r := gin.Default()
-	pprof.Register(r)
-	bakend := r.Group("/test")
-	{
-		bakend.GET("a", func(ctx *gin.Context) {
-			ctx.String(http.StatusOK, "This is a")
-		})
-		bakend.GET("b", func(ctx *gin.Context) {
-			ctx.String(http.StatusOK, "This is b")
-		})
-	}
+	fmt.Println("main 函数入口")
 
-	r.Run() // 监听并在 0.0.0.0:8080 上启动服务
+	routers.InitRouter().Run()
 }
